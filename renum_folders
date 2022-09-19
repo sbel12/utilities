@@ -1,0 +1,15 @@
+import os
+
+# starting folder's name
+starting_number=int(input("Please type starting folder's number: "))-1
+
+# number of folder to be renumbered
+num_renumbered=int(input("Please input number of folders to be renumbered: "))
+
+# path to the working directory
+working_directory=input('Please input working directory: ')
+
+os.chdir(working_directory)
+
+for i in range(1,num_renumbered+1):
+    os.rename("out"+str(starting_number+i), 'out'+str(i))
