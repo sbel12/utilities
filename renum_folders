@@ -1,8 +1,8 @@
-# used to work on chunks of a doe folders
+# used to renumber chunks of a doe folders
 
 import os
 
-# starting folder's name
+# starting folder's number
 starting_number=int(input("Please type starting folder's number: "))-1
 
 # number of folder to be renumbered
