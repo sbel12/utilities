@@ -1,3 +1,5 @@
+# used to work on chunks of a doe folders
+
 import os
 
 # starting folder's name
