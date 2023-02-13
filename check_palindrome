@@ -1,0 +1,28 @@
+#Ver1
+
+word_inp=input('Please, input you word: ')
+word_to_check=list(word_inp)
+
+
+for i in range(0,len(word_to_check)):
+    if word_to_check[i] != word_to_check[-(i+1)]:
+        print('\n This word is not a palindrome')
+        break
+    if i==len(word_to_check)-1:
+        print(f' {word_inp} is a palindrome')
+        
+        
+#Ver2
+# found it on the web
+def isPalindrome(s):
+    return s == s[::-1]
+ 
+ 
+# Driver code
+s = "malayalam"
+ans = isPalindrome(s)
+ 
+if ans:
+    print("Yes")
+else:
+    print("No")
