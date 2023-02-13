@@ -1,6 +1,7 @@
 #Ver1
 
 word_inp=input('Please, input you word: ')
+#split the word_inp to list of letters
 word_to_check=list(word_inp)
 
 
@@ -13,7 +14,7 @@ for i in range(0,len(word_to_check)):
         
         
 #Ver2
-# found it on the web
+# found it on the web, very short solution
 def isPalindrome(s):
     return s == s[::-1]
  
