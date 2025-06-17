@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
 # Set the path to your CSV file
-file_path ="D:/AlexBelenky/SuperPuma/RAdoms/pressure dist/super puma/Puma-1.csv"  # <-- Replace this with your actual file path
+file_path ="/..../Puma-1.csv"  # <-- Replace this with your actual file path
 # Load the CSV file
 data = pd.read_csv(file_path)
 
