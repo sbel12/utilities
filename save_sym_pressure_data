@@ -1,0 +1,38 @@
+#
+import pandas as pd
+
+# Load the original CSV file
+file_path = ".../super puma/Puma-2.csv"   # Replace with your actual file path
+data = pd.read_csv(file_path)
+
+# Extract original columns
+pressure = data.iloc[:, 0]
+x = data.iloc[:, 1]
+y = data.iloc[:, 2]
+z = data.iloc[:, 3]
+
+# Create mirrored data with -Y
+mirrored_data = pd.DataFrame({
+    'P': pressure,
+    'X': x,
+    'Y': -y,
+    'Z': z
+})
+
+# Create original data with proper column names
+original_data = pd.DataFrame({
+    'P': pressure,
+    'X': x,
+    'Y': y,
+    'Z': z
+})
+
+# Combine original and mirrored data
+combined_data = pd.concat([original_data, mirrored_data], ignore_index=True)
+
+# Save to a new CSV file
+output_path = "D:/AlexBelenky/SuperPuma/RAdoms/pressure dist/super puma/Puma-2_sym.csv"    # Replace with your desired output path
+combined_data.to_csv(output_path, index=False)
+
+print(f"New file saved to: {output_path}")
+
