@@ -1,0 +1,46 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+# Set the path to your CSV file
+file_path ="D:/AlexBelenky/SuperPuma/RAdoms/pressure dist/super puma/Puma-1.csv"  # <-- Replace this with your actual file path
+# Load the CSV file
+data = pd.read_csv(file_path)
+
+# Extract columns
+pressure = data.iloc[:, 0]
+x = data.iloc[:, 1]
+y = data.iloc[:, 2]
+z = data.iloc[:, 3]
+
+
+y1 = -data.iloc[:, 2] # Negate X to reflect symmetry around Y-axis
+
+
+# Create a 3D scatter plot
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+
+# Plot points with color based on pressure
+scplus = ax.scatter(x, y, z, c=pressure, cmap='viridis')
+scmin  = ax.scatter(x, y1, z, c=pressure, cmap='viridis')
+
+
+# Add color bar
+cb = plt.colorbar(scplus, ax=ax, shrink=0.5, aspect=5)
+cb = plt.colorbar(scmin, ax=ax, shrink=0.5, aspect=5)
+cb.set_label('Pressure')
+
+# Set axis labels
+ax.set_xlabel('X')
+ax.set_ylabel('Y')
+ax.set_zlabel('Z')
+
+ax.view_init(elev=30, azim=-230)
+
+
+# Show plot
+plt.show()
+
+
+
